@@ -1,0 +1,421 @@
+.App {
+  font-family: 'Segoe UI', sans-serif;
+  padding: 2rem;
+  padding-top: 1rem;
+  background: linear-gradient(to bottom right, #f9f9f9, #f0f0f0);
+  min-height: 100vh;
+  position: relative;
+  z-index: 0;
+}
+
+.App::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../public/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  opacity: 0.12; 
+  z-index: -1;
+  pointer-events: none;
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.75); 
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px); 
+  -webkit-backdrop-filter: blur(8px); 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000000;
+  text-decoration: none;
+}
+
+.nav-links a {
+  font-size: 1rem;
+  color: #444;
+  text-decoration: none;
+  margin-left: 1.5rem;
+}
+
+.nav-links a:hover {
+  color: #000;
+}
+
+.email-heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.email-empty {
+  text-align: center;
+  color: #666;
+}
+
+.email-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.email-card {
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.email-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.email-card h3 {
+  margin-bottom: 0.5rem;
+  margin-top: 0rem;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.email-card p {
+  margin: 0.3rem 0;
+  color: #555;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 40vmin;
+    pointer-events: none;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.refresh-btn {
+  margin-bottom: 0rem;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.refresh-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.refresh-btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #2563eb, #1e40af);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 265px);
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(to right, #f0f4ff, #ffffff);
+}
+
+.home-description {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.home-description .main-line {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.home-description .sub-line {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #555;
+}
+
+.sign-in-btn {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  background-color: #1a73e8;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(26, 115, 232, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sign-in-btn:hover {
+  background-color: #155ac1;
+  transform: translateY(-2px);
+}
+
+.email-divider {
+  border: 0;
+  height: 1.5px;
+  background: linear-gradient(to right, transparent, #999, transparent);
+  margin: 1rem 0;
+  border-radius: 999px;
+}
+
+.controls-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-bottom: 0rem;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-bar {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  font-size: 1rem;
+  outline: none;
+  background-color: white;
+  transition: box-shadow 0.2s ease;
+}
+
+.search-bar:focus {
+  box-shadow: 0 0 0 3px rgba(100, 150, 255, 0.2);
+}
+
+.filter-dropdown,
+.length-dropdown {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: white;
+  min-width: 160px;
+}
+
+.loading-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.dropdown-group {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.dropdown-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.dropdown-card {
+  position: absolute;
+  top: 2.8rem;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  z-index: 10;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dropdown-card label {
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dropdown-footer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dropdown-footer button {
+  background: #4285f4;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.filter-icon {
+  align-items: right;
+  width: 15px;
+  height: 15px;
+  margin-left: 1rem;
+  vertical-align: middle;
+}
+
+.dropdown-card input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border: 2.5px solid #007bff; 
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  margin-right: 0.5rem;
+  outline-offset: 2px;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-card input[type="radio"]:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.dropdown-card input[type="radio"]:checked::after {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db; 
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.sticky-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 12px 12px 12px 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 16px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.sticky-toolbar::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
+  pointer-events: none;
+  border-radius: 0px 0px 12px 12px;
+}
+
+.App::-webkit-scrollbar {
+  display: none;
+}
+
+.blurred-email {
+  filter: blur(5px);
+  user-select: none;
+  pointer-events: none;
+}
